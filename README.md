@@ -1,4 +1,8 @@
 # TwiPerl v1.0
+
+Script distribuído sobe licença GPL v3
+Leia sobre a licença para saber mais.
+
 --------------
 
 TwiPerl é um client de Twitter feito para linha de comando em linguagem Perl.
