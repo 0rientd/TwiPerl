@@ -10,6 +10,7 @@ Ele conta com 3 funções por enquanto, como:
 * Des-seguir pessoas colocando o nome de usuário ( *SEM ARROBA* )
 
 Em breve colocarei mais funções.
+
 --------------
 
 # MODO DE USO
@@ -19,19 +20,20 @@ Para executar o script basta você caminhas até o diretório do TwiPerl no Term
 * perl TwiPerl.pl -tuitar
 * perl TwiPerl.pl -follow
 * perl TwiPerl.pl -unfollow
+
 --------------
 
 # DEPENDÊNCIAS
 
-warnings;
-strict;
-Net::Twitter;
-Data::Dumper;
-Scalar::Util 'blessed';
-WWW::Mechanize;
-Getopt::Long;
-utf8;
-Term::ANSIColor;
+warnings
+strict
+Net::Twitter
+Data::Dumper
+Scalar::Util 'blessed'
+WWW::Mechanize
+Getopt::Long
+utf8
+Term::ANSIColor
 
 Para instala-los você pode digitar "sudo cpan [NOME DO MÓDULO]
 PS: VOCÊ PRECISA USAR O SUDO POIS SE NÃO VAI DAR ERRO NA HORA DE INSTALAR OS MÓDULOS!
@@ -55,4 +57,4 @@ Este link é aonde você consegue suas keys para pode usar aplicações terceira
 * ATENÇÃO! NÃO PASSE ESSAS CHAVES PARA NINGUÉM POIS ELAS DÃO ACESSO AO SEU TWITTER!
 --------------
 
-Made
+Feito por Carlos Henrique ( HackerOrientado ) | Ciência Hacker
