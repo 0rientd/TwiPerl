@@ -21,9 +21,11 @@ Em breve colocarei mais funções.
 
 Para executar o script basta você caminhas até o diretório do TwiPerl no Terminal e digitar algum destes comandos:
 
+* perl TwiPerl.pl -ajuda
 * perl TwiPerl.pl -tuitar
 * perl TwiPerl.pl -follow
 * perl TwiPerl.pl -unfollow
+* perl TwiPerl.pl -fav
 
 --------------
 
@@ -37,7 +39,6 @@ Para executar o script basta você caminhas até o diretório do TwiPerl no Term
 * WWW::Mechanize
 * Getopt::Long
 * utf8
-* Term::ANSIColor
 
 Para instala-los você pode digitar "sudo cpan [NOME DO MÓDULO]
 PS: VOCÊ PRECISA USAR O SUDO POIS SE NÃO VAI DAR ERRO NA HORA DE INSTALAR OS MÓDULOS!

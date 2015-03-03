@@ -1,0 +1,39 @@
+████████╗██╗    ██╗██╗
+╚══██╔══╝██║    ██║██║
+   ██║   ██║ █╗ ██║██║
+   ██║   ██║███╗██║██║
+   ██║   ╚███╔███╔╝██║
+   ╚═╝    ╚══╝╚══╝ ╚═╝
+██████╗ ███████╗██████╗ ██╗
+██╔══██╗██╔════╝██╔══██╗██║
+██████╔╝█████╗  ██████╔╝██║
+██╔═══╝ ██╔══╝  ██╔══██╗██║
+██║     ███████╗██║  ██║███████╗
+╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
+                              v1.1
+
+TwiPerl change log
+---------------------
+
+v1.0
+
+- Lançamento inicial do TwiPerl
+
+
+v1.1
+
+- Adicionado o argumento de ajuda ( -ajuda )
+
+- Adicionado o argumento de favoritar ( -fav )
+PS: Requer ID do tuíte
+
+- Mudança no baner
+PS: Obrigado Franco por me ajudar o/
+
+- Removido o módulo Term::ANSIColor
+
+- Leve mudança no código fonte
+
+---------------------
+
+Lincença GPL v3
