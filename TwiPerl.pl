@@ -50,7 +50,7 @@ $baner = "
 \t\t\t██╔═══╝ ██╔══╝  ██╔══██╗██║
 \t\t\t██║     ███████╗██║  ██║███████╗
 \t\t\t╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
-\t\t\t                              v1.2.1\n\n";
+\t\t\t                              v1.3.1\n\n";
 
 ############################ VERIFICAÇÃO DO SISTEMA OPERACIONAL PARA LIMPEZA DE TELA
 $SO = $^O;

@@ -1,4 +1,4 @@
-# TwiPerl v1.3
+# TwiPerl v1.3.1
 
 Script distribuído sobe licença GPL v3.
 Leia sobre a licença para saber mais.
