@@ -23,9 +23,12 @@ Para executar o script basta você caminhas até o diretório do TwiPerl no Term
 
 * perl TwiPerl.pl -ajuda
 * perl TwiPerl.pl -tuitar
+* perl TwiPerl.pl -destuitar
 * perl TwiPerl.pl -follow
 * perl TwiPerl.pl -unfollow
 * perl TwiPerl.pl -fav
+* perl TwiPerl.pl -desfav
+* perl TwiPerl.pl -dm
 
 --------------
 
@@ -53,13 +56,15 @@ Este link é aonde você consegue suas keys para pode usar aplicações terceira
 
 * Preencha os campos com o nome da aplicação, descrição, website ( pode colocar o seu Twitter ) e aceitar os termos e clicar no botão "Create your Twitter application".
 
-* Acesse a aba "Keys and Access Tokens" e você já verá a sua Consumer Key (API Ke), sua Consumer Secret (API Secret) e Access Level. Basta trocar de "Read-only" para "Read, Write and Access direct messages" e clicar no botão "Update Settings".
+* Acesse a aba "Keys and Access Tokens" e você já verá a sua Consumer Key (API Key), sua Consumer Secret (API Secret) e Access Level. Basta trocar de "Read-only" para "Read, Write and Access direct messages" e clicar no botão "Update Settings".
 
 * Feito isso, volte para a aba "Keys and Access Tokens" e clique no botão "Create my access token" quase que no final da página, para criação de mais chaves para acesso a sua conta.
 
-* Basta copia-las, "Consumer Key", "Consumer Secret", "Access Token", "Access Token Secret" e colar no código fonte do scipt aonde ele pede para você inserir suas Keys e salvar o script.
+* Basta copiar a "Consumer Key", "Consumer Secret", "Access Token", "Access Token Secret" e colar no código fonte do scipt aonde ele pede para você inserir suas Keys e salvar o script.
 
 * ATENÇÃO! NÃO PASSE ESSAS CHAVES PARA NINGUÉM POIS ELAS DÃO ACESSO AO SEU TWITTER!
 --------------
 
 Feito por Carlos Henrique ( HackerOrientado ) | Ciência Hacker
+
+GPG Pública: 2465B5D3

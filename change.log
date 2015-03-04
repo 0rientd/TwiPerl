@@ -34,6 +34,21 @@ PS: Obrigado Franco por me ajudar o/
 
 - Leve mudança no código fonte
 
+
+v1.2
+
+- Adicionado o argumento de apagar tuítes feito ( -destuitar )
+
+- Adicionado o argumento para mandar Mensagens Diretas ( DM ) ( -dm )
+
+- Adicionado o argumento para 'desfavoritar' tuítes ( -desfav )
+
+- Colocado key GPG pública nos comentários do código
+
+- Leve mudança no README.md
+
 ---------------------
 
 Lincença GPL v3
+
+GPG Pública: 2465B5D3

@@ -17,6 +17,8 @@
 #
 # Obrigado ao meu amigo do Ciência Hacker, Franco Colombino por me ajudar no baner :D
 #
+# GPG Pública: 2465B5D3
+#
 
 ############################ MÓDULOS QUE ESTÃO SENDO USADOS E SERÃO USADOS FUTURAMENTE
 use warnings;
@@ -33,7 +35,7 @@ binmode(STDOUT, ":utf8");
 binmode(STDIN, ":utf8");
 
 ############################ CRIAÇÃO DE VARIÁVEIS
-my ($baner, $SO, $limpar_tela, $url, $ajuda, $tuitar, $unfollow, $follow, $mech, $fav );
+my ($baner, $SO, $limpar_tela, $url, $ajuda, $tuitar, $destuitar, $unfollow, $follow, $mech, $fav, $desfav, $DM, $UserDM );
 $baner = "
 \e[1;34m
 \t\t\t████████╗██╗    ██╗██╗
@@ -48,7 +50,7 @@ $baner = "
 \t\t\t██╔═══╝ ██╔══╝  ██╔══██╗██║
 \t\t\t██║     ███████╗██║  ██║███████╗
 \t\t\t╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
-\t\t\t                              v1.1\n\n";
+\t\t\t                              v1.2\n\n";
 
 ############################ VERIFICAÇÃO DO SISTEMA OPERACIONAL PARA LIMPEZA DE TELA
 $SO = $^O;
@@ -60,7 +62,7 @@ if ( $SO eq "MSWin32" ) {
 
 system ("$limpar_tela");
 
-############################ KEYS DE DESENVOLVEDOR
+############################ MINHAS KEYS DE DESENVOLVEDOR :D
 my $consumer_key = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $consumer_secret = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $access_token = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
@@ -88,9 +90,12 @@ my $nt = Net::Twitter->new (
 my $args = GetOptions (
     'ajuda'         => \$ajuda,
     'tuitar'        => \$tuitar,
+    'destuitar'     => \$destuitar,
     'unfollow'      => \$unfollow,
     'follow'        => \$follow,
     'fav'           => \$fav,
+    'desfav'        => \$desfav,
+    'dm'            => \$DM,
 );
 
 ############################ CONDIÇÕES
@@ -101,6 +106,10 @@ if ( $ajuda ) {
 } elsif ( $tuitar ) {
 
     return tuitar();
+
+} elsif ( $destuitar ) {
+
+    return destuitar();
 
 } elsif ( $unfollow ) {
 
@@ -113,6 +122,14 @@ if ( $ajuda ) {
 } elsif ( $fav ) {
 
     return fav();
+
+} elsif ( $defav ) {
+
+    return desfav();
+
+} elsif ( $DM ) {
+
+    return DM();
 
 } else {
     system "$limpar_tela";
@@ -135,10 +152,14 @@ sub ajuda() {
     print "perl TwiPerl.pl -[ARGS]\n\n\n";
 
     print "\t\t  [\!] ARGUMENTOS QUE PODEM SER USADOS [\!]\n\n";
+    print "-ajuda           Mostra este menu\n";
     print "-tuitar          Tuíta na sua linha do tempo\n";
+    print "-destuitar       Apaga um tuíte feito\n";
     print "-follow          Segue um usuário ( Ex: HackerOrientado )\n";
     print "-unfollow        Des-segue um usuário ( Ex: HackerOrientado )\n";
     print "-fav             Favorita um tweet de algum usuário\n";
+    print "-desfav          'Desfavorita' um tuíte\n";
+    print "-dm              Manda uma mensagem direta ( DM ) para determinado usuário\n";
     print "\n";
     exit (0);
 }
@@ -157,7 +178,20 @@ sub tuitar () {
 
     print "\n";
     print "Tweet publicado com sucesso!\n\n";
-    print "Essa e sua mensagem -> $tuitar\n\n";
+    exit (0);
+}
+
+sub destuitar () {
+    print $baner;
+
+    print "Digite o ID do tuíte que você deseja apagar\n";
+    print "--> ";
+    $destuitar = <STDIN>; chomp $destuitar;
+
+    $nt -> destroy_status ({ id => $destuitar });
+
+    print "\n";
+    print "O tuíte ID $destuitar foi apagado com sucesso\n\n";
     exit (0);
 }
 
@@ -181,6 +215,7 @@ sub unfollow () {
 
     $nt -> unfollow ({ id => "$unfollow" });
 
+    print "\n";
     print "Twitter ID $unfollow foi des-seguido\n\n";
     exit (0);
 }
@@ -204,6 +239,7 @@ sub follow () {
 
     $nt->follow ({ id => "$follow" });
 
+    print "\n";
     print "Twitter ID $follow foi seguido\n\n";
     exit (0);
 }
@@ -217,6 +253,41 @@ sub fav () {
 
     $nt -> create_favorite ({ id => $fav });
 
-    print "Tweet ID $fav foi 'favoritado'\n\n";
+    print "\n";
+    print "Tuíte ID $fav foi 'favoritado'\n\n";
+    exit (0);
+}
+
+sub desfav () {
+    print $baner;
+
+    print "Digite o ID do status para des-favoritar\n";
+    print "--> ";
+    $desfav = <STDIN>; chomp $desfav;
+
+    $nt -> destroy_favorite ({ id => $desfav });
+
+    print "\n";
+    print "Tuíte ID $desfav foi 'desfavoritado'\n\n";
+    exit (0);
+}
+
+sub DM () {
+    print $baner;
+
+    print "Digite o usuário para quem você deseja mandar a mensagem\n";
+    print "--> ";
+    $UserDM = <STDIN>; chomp $UserDM;
+
+    print "\n\n";
+    print "Agora digite a mensagem a ser enviada\n";
+    print "PS: Apenas 140 caracteres\n";
+    print "--> ";
+    $DM = <STDIN>; chomp $DM;
+
+    $nt -> new_direct_message ({ screen_name => $UserDM, text => $DM });
+
+    print "\n";
+    print "Mensagem enviada com sucesso\n\n";
     exit (0);
 }
