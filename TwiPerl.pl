@@ -50,7 +50,7 @@ $baner = "
 \t\t\t██╔═══╝ ██╔══╝  ██╔══██╗██║
 \t\t\t██║     ███████╗██║  ██║███████╗
 \t\t\t╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
-\t\t\t                              v1.2\n\n";
+\t\t\t                              v1.3\n\n";
 
 ############################ VERIFICAÇÃO DO SISTEMA OPERACIONAL PARA LIMPEZA DE TELA
 $SO = $^O;
@@ -67,15 +67,6 @@ my $consumer_key = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $consumer_secret = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $access_token = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $access_token_secret = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
-
-############################ KEYS
-my $nt = Net::Twitter->new (
-    traits              => ['API::RESTv1_1', 'OAuth'],
-    consumer_key        => $consumer_key,
-    consumer_secret     => $consumer_secret,
-    access_token        => $access_token,
-    access_token_secret => $access_token_secret,
-);
 
 ############################ INICIANDO AUTENTICAÇÃO COM O Net::Twitter
 my $nt = Net::Twitter->new (
