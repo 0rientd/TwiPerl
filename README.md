@@ -5,18 +5,6 @@ Leia sobre a licença para saber mais.
 
 --------------
 
-TwiPerl é um client de Twitter feito para linha de comando em linguagem Perl.
-
-Ele conta com 3 funções por enquanto, como:
-
-* Tuítar
-* Seguir pessoas colocando o nome de usuário ( *SEM ARROBA* )
-* Des-seguir pessoas colocando o nome de usuário ( *SEM ARROBA* )
-
-Em breve colocarei mais funções.
-
---------------
-
 # MODO DE USO
 
 Para executar o script basta você caminhas até o diretório do TwiPerl no Terminal e digitar algum destes comandos:
