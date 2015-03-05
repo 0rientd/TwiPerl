@@ -35,7 +35,8 @@ binmode(STDOUT, ":utf8");
 binmode(STDIN, ":utf8");
 
 ############################ CRIAÇÃO DE VARIÁVEIS
-my ($baner, $SO, $limpar_tela, $url, $ajuda, $tuitar, $destuitar, $unfollow, $follow, $mech, $fav, $desfav, $DM, $UserDM );
+my ( $baner, $SO, $limpar_tela, $url, $ajuda, $tuitar, $destuitar, $unfollow, $follow, $mech, $fav, $desfav, $DM, $UserDM );
+my ( $up_nome, $up_localizacao, $up_descricao );
 $baner = "
 \e[1;34m
 \t\t\t████████╗██╗    ██╗██╗
@@ -50,7 +51,7 @@ $baner = "
 \t\t\t██╔═══╝ ██╔══╝  ██╔══██╗██║
 \t\t\t██║     ███████╗██║  ██║███████╗
 \t\t\t╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
-\t\t\t                              v1.3.1\n\n";
+\t\t\t                              v1.4\n\n";
 
 ############################ VERIFICAÇÃO DO SISTEMA OPERACIONAL PARA LIMPEZA DE TELA
 $SO = $^O;
@@ -67,15 +68,6 @@ my $consumer_key = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $consumer_secret = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $access_token = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
 my $access_token_secret = 'ENTRE COM SUA CHAVE DE DESENVOLVEDOR AQUI';
-
-############################ KEYS
-my $nt = Net::Twitter->new (
-    traits              => ['API::RESTv1_1', 'OAuth'],
-    consumer_key        => $consumer_key,
-    consumer_secret     => $consumer_secret,
-    access_token        => $access_token,
-    access_token_secret => $access_token_secret,
-);
 
 ############################ INICIANDO AUTENTICAÇÃO COM O Net::Twitter
 my $nt = Net::Twitter->new (
@@ -96,6 +88,9 @@ my $args = GetOptions (
     'fav'           => \$fav,
     'desfav'        => \$desfav,
     'dm'            => \$DM,
+    'upnome'        => \$up_nome,
+    'uplocal'       => \$up_localizacao,
+    'updescricao'   => \$up_descricao,
 );
 
 ############################ CONDIÇÕES
@@ -131,6 +126,18 @@ if ( $ajuda ) {
 
     return DM();
 
+} elsif ( $up_nome ) {
+
+    return up_nome();
+
+} elsif ( $up_localizacao ) {
+
+    return up_localizacao();
+
+} elsif ( $up_descricao ) {
+
+    return up_descricao();
+
 } else {
     system "$limpar_tela";
     print $baner;
@@ -160,6 +167,9 @@ sub ajuda() {
     print "-fav             Favorita um tweet de algum usuário\n";
     print "-desfav          'Desfavorita' um tuíte\n";
     print "-dm              Manda uma mensagem direta ( DM ) para determinado usuário\n";
+    print "-upnome          Atualiza o seu nome\n";
+    print "-uplocal         Atualiza seu local\n";
+    print "-updescricao     Atualiza sua descrição\n";
     print "\n";
     exit (0);
 }
@@ -289,5 +299,46 @@ sub DM () {
 
     print "\n";
     print "Mensagem enviada com sucesso\n\n";
+    exit (0);
+}
+
+sub up_nome () {
+    print $baner;
+
+    print "Digite o novo nome que deseja usar\n";
+    print "--> ";
+    $up_nome = <STDIN>; chomp $up_nome;
+
+    $nt -> update_profile ({ name => $up_nome });
+    print "\n";
+    print "Nome alterado com sucesso\n\n";
+    exit (0);
+}
+
+sub up_localizacao () {
+    print $baner;
+
+    print "Atualize sua localização no seu perfil\n";
+    print "--> ";
+    $up_localizacao = <STDIN>; chomp $up_localizacao;
+
+    $nt -> update_profile ({ location => $up_localizacao });
+
+    print "\n";
+    print "Localização alterada com sucesso\n\n";
+    exit (0);
+}
+
+sub up_descricao () {
+    print $baner;
+
+    print "Digite aqui a sua nova descrição em seu perfil no Twitter\n";
+    print "--> ";
+    $up_descricao = <STDIN>; chomp $up_descricao;
+
+    $nt -> update_profile ({ description => $up_descricao });
+
+    print "\n";
+    print "Descrição alterada com sucesso\n\n";
     exit (0);
 }

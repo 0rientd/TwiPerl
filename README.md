@@ -1,4 +1,4 @@
-# TwiPerl v1.3.1
+# TwiPerl v1.4
 
 Script distribuído sobe licença GPL v3.
 Leia sobre a licença para saber mais.
@@ -29,6 +29,9 @@ Para executar o script basta você caminhas até o diretório do TwiPerl no Term
 * perl TwiPerl.pl -fav
 * perl TwiPerl.pl -desfav
 * perl TwiPerl.pl -dm
+* perl TwiPerl.pl -upnome
+* perl TwiPerl.pl -uplocal
+* perl TwiPerl.pl -updescricao
 
 --------------
 

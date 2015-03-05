@@ -10,7 +10,7 @@
 ██╔═══╝ ██╔══╝  ██╔══██╗██║
 ██║     ███████╗██║  ██║███████╗
 ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
-                              v1.3.1
+                              v1.4
 
 TwiPerl change log
 ---------------------
@@ -57,6 +57,15 @@ v1.3
 - Corrigido um erro de escrita. Me desculpem.
 
 - Atualizado baner do change.log
+
+
+1.4
+
+- Adicionado o argumento para atualizar o nome de perfil
+
+- Adicionado o argumento para atualizar sua localização no perfil
+
+- Adicionado o argumento para atualizar a sua descrição no perfil
 
 ---------------------
 
