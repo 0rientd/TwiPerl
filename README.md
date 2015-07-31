@@ -7,7 +7,7 @@ Leia sobre a licença para saber mais.
 
 # MODO DE USO
 
-Para executar o script basta você caminhas até o diretório do TwiPerl no Terminal e digitar algum destes comandos:
+Para executar o script basta você caminhar até o diretório do TwiPerl no Terminal e digitar algum destes comandos:
 
 * perl TwiPerl.pl -ajuda
 * perl TwiPerl.pl -tuitar
